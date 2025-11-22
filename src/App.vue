@@ -39,26 +39,37 @@
         <div class="highlight">Struggles with complex algorithms and finding time to balance work and learning</div>
         <div class="highlight">GitHub, Udemy courses</div>
       </section>
+      <section class="boldhighlight">
 
+        <div class="highlight"><b>Goals</b></div>
+        <div class="highlight"><b>Struggle</b></div>
+        <div class="highlight"><b>Brand Affiliation</b>s</div>
+      </section>
+      <br>
+      <br>
+      <br>
       <section id="about" class="brief">
         <div class="brief-card">
-          <h2>Brief</h2>
+          <h2 class="center">Brief</h2>
 
           <h3>Background & Story</h3>
-          <p>{{ persona.background }}</p>
-
+          <p class="P">{{ persona.background }}</p>
+          <br>
+          <br>
+          <br>
           <div class="two-col">
-            <div>
-              <h3>Personality</h3>
+            <div class="per">
+              <h1>Personality</h1>
               <p><strong>Traits:</strong> {{ persona.personality.traits }}</p>
               <p><strong>Communication Style:</strong> {{ persona.personality.communication }}</p>
               <p><strong>Behaviors:</strong> {{ persona.personality.behaviors }}</p>
             </div>
+            <img style="scale: .5;" :src="persona.photoUrlIcon" alt="icon photo" />
+          </div>
 
-            <div class="quote-box">
-              <h3>Quote</h3>
-              <blockquote>“{{ persona.quote }}”</blockquote>
-            </div>
+          <div class="quote-box">
+            <h1>Quote</h1>
+            <blockquote>“{{ persona.quote }}”</blockquote>
           </div>
         </div>
       </section>
@@ -83,6 +94,7 @@ const persona = reactive({
   location: 'San Francisco, CA',
   familyStatus: 'Single',
   photoUrl: '/src/assets/profile.jpg',
+  photoUrlIcon: '/src/assets/icon.png',
   bio: 'Sarah is a tech enthusiast who is passionate about learning programming and expanding her knowledge in computer science. She enjoys solving complex problems and building innovative products.',
   motivations: 'Becoming proficient in CS, building career-ready projects, and collaborating with startups and nonprofits.',
   background:
@@ -131,6 +143,21 @@ html,
   padding: 12px 8px
 }
 
+.hero-right {
+  font-size: 20px;
+}
+.per
+{
+
+  display: block;
+  align-content: center;
+  font-size: 20px;
+}
+blockquote
+{
+  font-size: 20px;
+}
+
 .brand {
   background: #0f172a;
   color: white;
@@ -147,7 +174,7 @@ html,
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.7fr;
   gap: 20px;
   margin-top: 14px
 }
@@ -204,15 +231,29 @@ html,
   display: flex;
   gap: 12px;
   justify-content: space-between;
-  margin: 18px 0
+  margin: 18px 0;
+  height: 350px;
+  text-align: center;
+}
+
+.boldhighlight {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 18px 0;
+  text-align: center;
 }
 
 .highlight {
   flex: 1;
   text-align: center;
-  font-size: 13px;
-  color: var(--muted)
+  font-size: 20px;
+  color: var(--muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .brief {
   margin-top: 12px
@@ -231,7 +272,7 @@ html,
 
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 1.4fr;
   gap: 18px;
   margin-top: 12px
 }
@@ -267,5 +308,16 @@ html,
     width: 160px;
     height: 160px
   }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+
+}
+
+.P {
+  font-size: 20px;
+  text-align: center;
 }
 </style>
