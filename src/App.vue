@@ -76,9 +76,10 @@ const persona = reactive({
       <br>
       <section id="about" class="brief">
         <div class="brief-card">
-          <h2 class="center">Brief</h2>
+          <h1 class="center">Brief</h1>
 
-          <h3>Background & Story</h3>
+          <h1>Background & Story</h1>
+          <br>
           <p class="P">{{ persona.background }}</p>
           <br>
           <br>
@@ -195,7 +196,7 @@ blockquote {
   flex-direction: column;
   align-items: center;
   background-color: #DEDEFD;
-  border-radius: 24px;
+  border-radius: 30px;
 
 }
 
