@@ -1,3 +1,29 @@
+<script setup>
+import { reactive } from 'vue'
+
+// Clear, descriptive reactive object for the persona data
+const persona = reactive({
+  name: 'Maya / Sarah',
+  age: '28',
+  gender: 'Female',
+  occupation: 'Software Engineer',
+  location: 'San Francisco, CA',
+  familyStatus: 'Single',
+  photoUrl: '/src/assets/profile.jpg',
+  photoUrlIcon: '/src/assets/icon.png',
+  bio: 'Sarah is a tech enthusiast who is passionate about learning programming and expanding her knowledge in computer science. She enjoys solving complex problems and building innovative products.',
+  motivations: 'Becoming proficient in CS, building career-ready projects, and collaborating with startups and nonprofits.',
+  background:
+    'Maya grew up in a multicultural household where creativity was always encouraged. After studying Computer Science at UT Austin, she worked in two agencies before going independent. She now collaborates with startups and nonprofits, helping them launch intuitive and human-centered digital products.',
+  personality: {
+    traits: 'Curious, detail-oriented, warm, energetic',
+    communication: 'Clear, visual, collaborative',
+    behaviors: 'Takes notes on everything; always prototyping ideas; loves brainstorming workshops'
+  },
+  quote: 'programming should feel like a conversation—clear, intuitive, and human.'
+})
+</script>
+
 <template>
   <div class="persona-page">
     <header class="site-header">
@@ -8,7 +34,7 @@
         <a href="#contact">Contact</a>
       </nav>
     </header>
-
+    <hr>
     <main>
       <section id="home" class="hero">
         <div class="hero-left">
@@ -74,7 +100,7 @@
         </div>
       </section>
     </main>
-
+    <hr>
     <footer class="site-footer" id="contact">
       <div class="footer-left">© {{ new Date().getFullYear() }} — {{ persona.name }}</div>
       <div class="footer-right">GitHub · LinkedIn · Portfolio</div>
@@ -82,31 +108,7 @@
   </div>
 </template>
 
-<script setup>
-import { reactive } from 'vue'
 
-// Clear, descriptive reactive object for the persona data
-const persona = reactive({
-  name: 'Maya / Sarah',
-  age: '28',
-  gender: 'Female',
-  occupation: 'Software Engineer',
-  location: 'San Francisco, CA',
-  familyStatus: 'Single',
-  photoUrl: '/src/assets/profile.jpg',
-  photoUrlIcon: '/src/assets/icon.png',
-  bio: 'Sarah is a tech enthusiast who is passionate about learning programming and expanding her knowledge in computer science. She enjoys solving complex problems and building innovative products.',
-  motivations: 'Becoming proficient in CS, building career-ready projects, and collaborating with startups and nonprofits.',
-  background:
-    'Maya grew up in a multicultural household where creativity was always encouraged. After studying Computer Science at UT Austin, she worked in two agencies before going independent. She now collaborates with startups and nonprofits, helping them launch intuitive and human-centered digital products.',
-  personality: {
-    traits: 'Curious, detail-oriented, warm, energetic',
-    communication: 'Clear, visual, collaborative',
-    behaviors: 'Takes notes on everything; always prototyping ideas; loves brainstorming workshops'
-  },
-  quote: 'programming should feel like a conversation—clear, intuitive, and human.'
-})
-</script>
 
 <style scoped>
 :root {
@@ -132,7 +134,7 @@ html,
 
 .persona-page {
   max-width: var(--max-width);
-  margin: 24px auto;
+  margin: auto;
   padding: 18px
 }
 
@@ -140,21 +142,26 @@ html,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 8px
+  padding: 12px 8px;
+  font-size: 24px;
 }
 
 .hero-right {
   font-size: 20px;
+  background-color: #DEDEFD;
+  border-radius: 24px;
+
+
 }
-.per
-{
+
+.per {
 
   display: block;
   align-content: center;
   font-size: 20px;
 }
-blockquote
-{
+
+blockquote {
   font-size: 20px;
 }
 
@@ -186,7 +193,10 @@ blockquote
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  background-color: #DEDEFD;
+  border-radius: 24px;
+
 }
 
 .photo-card img {
@@ -213,10 +223,11 @@ blockquote
 }
 
 .bio-card {
-  background: white;
+  background-color: #DEDEFD;
   padding: 20px;
   border-radius: var(--radius);
-  border: 1px solid var(--border)
+  border: 1px solid var(--border);
+  border-radius: 24px;
 }
 
 .bio-card h2 {
@@ -232,7 +243,7 @@ blockquote
   gap: 12px;
   justify-content: space-between;
   margin: 18px 0;
-  height: 350px;
+  height: 236px;
   text-align: center;
 }
 
@@ -240,7 +251,7 @@ blockquote
   display: flex;
   gap: 12px;
   justify-content: space-between;
-  margin: 18px 0;
+  margin: 28px 0;
   text-align: center;
 }
 
@@ -251,7 +262,7 @@ blockquote
   color: var(--muted);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 
@@ -277,11 +288,20 @@ blockquote
   margin-top: 12px
 }
 
+.quote-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .quote-box blockquote {
   font-style: italic;
   color: var(--muted);
   border-left: 3px solid var(--accent);
-  padding-left: 10px
+  padding-left: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .site-footer {
